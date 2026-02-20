@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Briefcase, Plus, Phone, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface MobileBottomNavProps {
     onOrderClick: () => void;
@@ -34,10 +35,10 @@ const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ onOrderClick, onMenuC
                     </div>
 
                     {/* Services */}
-                    <a href="#services" className="flex flex-col items-center gap-1 w-16 text-slate-400 hover:text-brand-600 transition-colors">
+                    <Link to="/services" onClick={() => { if (isMenuOpen) onMenuClick(); }} className="flex flex-col items-center gap-1 w-16 text-slate-400 hover:text-brand-600 transition-colors">
                         <Briefcase className="w-6 h-6" />
                         <span className="text-[10px] font-medium">Услуги</span>
-                    </a>
+                    </Link>
 
                     {/* Central Action (Calculate) */}
                     <div className="relative -top-6">

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import logo from '@/assets/images/logo.png';
 
 interface HeaderProps {
@@ -41,21 +42,26 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick, isMenuOpen, setIsMenuOpen
             data-scrolled={isScrolled}
           >
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-3 group">
               <img src={logo} alt="Time2Clean" className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className={`hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600 lg:group-data-[scrolled=true]:text-slate-300`}>
-              {['Преимущества', 'Услуги', 'Отзывы', 'Контакты'].map((item, i) => (
-                <a
+              {[
+                { name: 'Главная', path: '/' },
+                { name: 'Услуги', path: '/services' },
+                { name: 'О нас', path: '/about' },
+                { name: 'Контакты', path: '/contact' }
+              ].map((item, i) => (
+                <Link
                   key={i}
-                  href={`#${item === 'Контакты' ? 'order-form' : item === 'Отзывы' ? 'reviews' : item === 'Услуги' ? 'services' : 'features'}`}
+                  to={item.path}
                   className="hover:text-brand-400 transition-colors relative group"
                 >
-                  {item}
+                  {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -99,16 +105,21 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick, isMenuOpen, setIsMenuOpen
           >
             <div className="bg-white rounded-3xl p-6 shadow-2xl border border-slate-100 overflow-hidden">
               <nav className="flex flex-col gap-2">
-                {['Преимущества', 'Услуги', 'Отзывы', 'Контакты'].map((item) => (
-                  <a
-                    key={item}
-                    href={`#${item === 'Контакты' ? 'order-form' : item === 'Отзывы' ? 'reviews' : item === 'Услуги' ? 'services' : 'features'}`}
+                {[
+                  { name: 'Главная', path: '/' },
+                  { name: 'Услуги', path: '/services' },
+                  { name: 'О нас', path: '/about' },
+                  { name: 'Контакты', path: '/contact' }
+                ].map((item, i) => (
+                  <Link
+                    key={i}
+                    to={item.path}
                     onClick={() => setIsMenuOpen(false)}
                     className="p-4 rounded-xl hover:bg-slate-50 text-slate-900 font-medium transition-colors flex items-center justify-between group"
                   >
-                    {item}
+                    {item.name}
                     <span className="text-slate-300 group-hover:text-brand-500 transition-colors">→</span>
-                  </a>
+                  </Link>
                 ))}
 
                 <div className="mt-4 pt-4 border-t border-slate-100">

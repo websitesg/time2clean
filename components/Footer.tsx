@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Instagram, Facebook, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '@/assets/images/logo.png';
 
 const Footer: React.FC = () => {
@@ -8,9 +9,9 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 lg:col-span-1">
-            <a href="#" className="flex items-center gap-3 mb-6 group">
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
               <img src={logo} alt="Time2Clean" className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
-            </a>
+            </Link>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
               Профессиональный клининг, которому доверяют. Мы делаем чистоту доступной и технологичной.
             </p>
@@ -25,24 +26,20 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-6 text-slate-900">Услуги</h4>
+            <h4 className="font-bold text-lg mb-6 text-slate-900">Навигация</h4>
             <ul className="space-y-4 text-slate-500 text-sm font-medium">
-              <li><a href="#" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">Поддерживающая уборка <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">Генеральная уборка <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">Уборка после ремонта <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">Химчистка мебели <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">Мойка окон <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+              <li><Link to="/services" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">Услуги <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></Link></li>
+              <li><Link to="/about" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">О нас <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></Link></li>
+              <li><Link to="/contact" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">Контакты <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></Link></li>
+              <li><Link to="/" className="hover:text-brand-600 transition-colors flex items-center gap-2 group">Главная <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /></Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-lg mb-6 text-slate-900">Клиентам</h4>
             <ul className="space-y-4 text-slate-500 text-sm font-medium">
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Прайс-лист</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Преимущества</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Отзывы</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Политика конфиденциальности</a></li>
-              <li><a href="#" className="hover:text-brand-600 transition-colors">Оферта</a></li>
+              <li><Link to="/" className="hover:text-brand-600 transition-colors">Политика конфиденциальности</Link></li>
+              <li><Link to="/" className="hover:text-brand-600 transition-colors">Оферта</Link></li>
             </ul>
           </div>
 
