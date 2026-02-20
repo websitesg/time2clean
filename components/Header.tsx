@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '@/assets/images/logo.png';
 
 interface HeaderProps {
   onOrderClick: () => void;
@@ -41,13 +42,7 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick, isMenuOpen, setIsMenuOpen
           >
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
-                <span className="text-white font-bold text-lg">T2C</span>
-              </div>
-              <div className={`block leading-tight text-slate-900 lg:text-slate-900 lg:group-data-[scrolled=true]:text-white`}>
-                <div className="font-bold text-xl tracking-tight">Time2Clean</div>
-                <div className="text-[10px] opacity-60 uppercase tracking-widest font-semibold">Клининг</div>
-              </div>
+              <img src={logo} alt="Time2Clean" className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
             </a>
 
             {/* Desktop Nav */}

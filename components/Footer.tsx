@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Instagram, Facebook, ArrowUpRight } from 'lucide-react';
+import logo from '@/assets/images/logo.png';
 
 const Footer: React.FC = () => {
   return (
@@ -8,10 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 lg:col-span-1">
             <a href="#" className="flex items-center gap-3 mb-6 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
-                <span className="text-white font-bold text-lg">T2C</span>
-              </div>
-              <div className="font-bold text-xl leading-tight tracking-tight text-slate-900 group-hover:text-brand-600 transition-colors">Time2Clean</div>
+              <img src={logo} alt="Time2Clean" className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
             </a>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
               Профессиональный клининг, которому доверяют. Мы делаем чистоту доступной и технологичной.
