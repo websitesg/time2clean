@@ -12,14 +12,14 @@ const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
     <section className="relative pt-16 pb-16 md:pt-20 md:pb-24 overflow-hidden min-h-[85vh] flex items-center">
 
       {/* Full-width Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-white">
         <img
           src={heroBg}
           alt="Профессиональная уборка квартир"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[80%_center] lg:object-right"
         />
-        {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+        {/* Gradient Overlay for Text Readability - Only on the left half to preserve image contrast */}
+        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-white via-white/90 to-transparent w-full md:w-2/3 lg:w-7/12"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 w-full">
