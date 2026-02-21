@@ -4,13 +4,13 @@ import { Minus, Plus, Check, Info } from 'lucide-react';
 
 const Calculator: React.FC = () => {
     const [area, setArea] = useState(40);
-    const [serviceType, setServiceType] = useState<'standard' | 'general' | 'after-repair'>('general');
+    const [serviceType, setServiceType] = useState<'apartments' | 'after-repair' | 'offices'>('apartments');
     const [extras, setExtras] = useState<string[]>([]);
 
     const services = {
-        standard: { name: 'Поддерживающая', pricePerSqm: 80, minPrice: 2000 },
-        general: { name: 'Генеральная', pricePerSqm: 130, minPrice: 3500 },
-        'after-repair': { name: 'После ремонта', pricePerSqm: 160, minPrice: 4500 },
+        apartments: { name: 'Уборка квартир', pricePerSqm: 87.5, minPrice: 3500 }, // Assuming 40m2 default = 3500 means ~87.5 per sqm base, or just use minPrice
+        'after-repair': { name: 'Уборка после ремонта', pricePerSqm: 225, minPrice: 9000 },
+        offices: { name: 'Клининг офисов', pricePerSqm: 87.5, minPrice: 3500 },
     };
 
     const extraOptions = [
@@ -99,8 +99,8 @@ const Calculator: React.FC = () => {
                                                 key={key}
                                                 onClick={() => setServiceType(key as any)}
                                                 className={`py-3 px-4 rounded-xl text-sm font-bold transition-all border-2 ${serviceType === key
-                                                        ? 'border-brand-500 bg-brand-50 text-brand-700 shadow-sm'
-                                                        : 'border-slate-100 bg-slate-50 text-slate-500 hover:border-slate-200'
+                                                    ? 'border-brand-500 bg-brand-50 text-brand-700 shadow-sm'
+                                                    : 'border-slate-100 bg-slate-50 text-slate-500 hover:border-slate-200'
                                                     }`}
                                             >
                                                 {value.name}
@@ -139,8 +139,8 @@ const Calculator: React.FC = () => {
                                                 key={option.id}
                                                 onClick={() => toggleExtra(option.id)}
                                                 className={`py-2 px-4 rounded-full text-sm font-semibold transition-all border ${extras.includes(option.id)
-                                                        ? 'border-brand-500 bg-brand-500 text-white shadow-md shadow-brand-500/20'
-                                                        : 'border-slate-200 bg-white text-slate-600 hover:border-brand-200'
+                                                    ? 'border-brand-500 bg-brand-500 text-white shadow-md shadow-brand-500/20'
+                                                    : 'border-slate-200 bg-white text-slate-600 hover:border-brand-200'
                                                     }`}
                                             >
                                                 {option.name} <span className="opacity-70 ml-1 text-xs">+ {option.price}₽</span>
