@@ -9,7 +9,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-[85vh] flex items-center">
+    <section className="relative pt-16 pb-16 md:pt-20 md:pb-24 overflow-hidden min-h-[85vh] flex items-center">
 
       {/* Full-width Background Image */}
       <div className="absolute inset-0 z-0">
