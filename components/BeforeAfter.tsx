@@ -13,15 +13,15 @@ const BeforeAfter = () => {
             desc: "Удалили сложные пятна с ковролина и мягкой мебели"
         },
         {
-            before: 'images/before-after/window_dirty.png',
-            after: 'images/before-after/window_clean.png',
+            before: 'images/before-after/window_dirty.png?v=2',
+            after: 'images/before-after/window_clean.png?v=2',
             alt: 'Окно',
             title: 'Мойка окон',
             desc: "Вернули прозрачность и блеск окнам после ремонта"
         },
         {
-            before: 'images/before-after/kitchen_dirty.png',
-            after: 'images/before-after/kitchen_clean.png',
+            before: 'images/before-after/kitchen_dirty.png?v=2',
+            after: 'images/before-after/kitchen_clean.png?v=2',
             alt: 'Кухня',
             title: 'Уборка кухни',
             desc: "Обезжирили поверхности и технику"
