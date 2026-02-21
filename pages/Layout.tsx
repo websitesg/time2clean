@@ -19,7 +19,7 @@ const Layout: React.FC = () => {
                 setIsMenuOpen={setIsMenuOpen}
             />
 
-            <main className="pt-20 lg:pt-24 min-h-screen">
+            <main className="pt-20 lg:pt-20 min-h-screen">
                 <Outlet context={{ setShowModal }} />
             </main>
 

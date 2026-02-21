@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
   }, []);
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 min-h-[95vh] flex items-center">
+    <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 min-h-[85vh] flex items-center">
 
       {/* Ambient Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
