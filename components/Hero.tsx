@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Star, Shield, Clock, CheckCircle, Sparkles } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import heroBg from '@/assets/images/hero_bg_aprons.png';
+import heroBg from '../src/assets/images/hero_bg_aprons.png';
 
 interface HeroProps {
   onOrderClick: () => void;
