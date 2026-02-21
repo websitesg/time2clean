@@ -9,7 +9,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 min-h-[85vh] flex items-center">
+    <section className="relative pt-20 pb-16 md:pt-24 md:pb-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 min-h-[80vh] flex items-center">
 
       {/* Ambient Background Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -107,6 +107,46 @@ const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
                   WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%)'
                 }}
               />
+
+              {/* Floating Badges */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+                className="absolute -right-4 lg:-right-8 top-12 w-48 bg-white/80 backdrop-blur-lg border border-white p-4 rounded-2xl shadow-xl shadow-brand-900/5 z-20 hidden md:block"
+              >
+                <div className="flex gap-1 mb-2">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                  ))}
+                </div>
+                <div className="font-bold text-slate-800 text-sm">5.0 Рейтинг</div>
+                <div className="text-xs text-slate-500 font-medium mt-1">Более 200+ довольных клиентов в 2024 году</div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8 }}
+                className="absolute left-0 lg:-left-12 bottom-12 lg:bottom-24 bg-white/90 backdrop-blur-md border border-white p-3 pr-5 rounded-full shadow-xl shadow-brand-900/5 z-20 hidden md:flex items-center gap-3"
+              >
+                <div className="flex -space-x-3">
+                  <div className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                    <img src="https://i.pravatar.cc/100?img=1" alt="Cleaner" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden relative">
+                    <img src="https://i.pravatar.cc/100?img=5" alt="Cleaner" className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-green-500/20"></div>
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-bold text-slate-800">2 клинера</span>
+                  <span className="text-xs font-semibold text-green-600 flex items-center gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                    Свободны сейчас
+                  </span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
 
