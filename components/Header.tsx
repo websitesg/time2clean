@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick, isMenuOpen, setIsMenuOpen
           <div className={`
             flex items-center justify-between px-6 py-2.5 rounded-full border transition-all duration-300
             bg-white/10 border-transparent md:bg-white/5 backdrop-blur-sm
-            lg:data-[scrolled=true]:glass-dark lg:data-[scrolled=true]:border-slate-700/50 lg:data-[scrolled=true]:shadow-2xl lg:data-[scrolled=true]:bg-slate-900/80 lg:data-[scrolled=true]:backdrop-blur-xl
+            lg:data-[scrolled=true]:glass-dark lg:data-[scrolled=true]:border-slate-700/50 lg:data-[scrolled=true]:shadow-2xl lg:data-[scrolled=true]:bg-slate-800/60 lg:data-[scrolled=true]:backdrop-blur-xl
           `}
             data-scrolled={isScrolled}
           >
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick, isMenuOpen, setIsMenuOpen
             </Link>
 
             {/* Desktop Nav */}
-            <nav className={`hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600 lg:group-data-[scrolled=true]:text-slate-300`}>
+            <nav className={`hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600 lg:group-data-[scrolled=true]:text-white/90`}>
               {[
                 { name: 'Главная', path: '/' },
                 { name: 'Услуги', path: '/services' },
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick, isMenuOpen, setIsMenuOpen
                 <Link
                   key={i}
                   to={item.path}
-                  className="hover:text-brand-400 transition-colors relative group"
+                  className="hover:text-white transition-colors relative group"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-full"></span>
@@ -65,8 +65,8 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick, isMenuOpen, setIsMenuOpen
             {/* Actions */}
             <div className="flex items-center gap-4">
               <div className={`hidden md:flex flex-col items-end text-slate-900 lg:group-data-[scrolled=true]:text-white`}>
-                <a href="tel:+73510000000" className="font-bold hover:text-brand-400 transition-colors flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-brand-500" />
+                <a href="tel:+73510000000" className="font-bold hover:text-brand-300 transition-colors flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-brand-400" />
                   +7 (351) 000-00-00
                 </a>
               </div>
