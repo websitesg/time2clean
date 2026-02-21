@@ -9,34 +9,29 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
   return (
-    <section className="relative pt-16 pb-16 md:pt-20 md:pb-24 overflow-hidden min-h-[85vh] flex items-center">
+    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 min-h-[85vh] flex items-center">
 
-      {/* Full-width Background Image */}
-      <div className="absolute inset-0 z-0 bg-white">
-        <img
-          src={heroBg}
-          alt="Профессиональная уборка квартир"
-          className="w-full h-full object-cover object-[80%_center] lg:object-right"
-        />
-        {/* Gradient Overlay for Text Readability - Only on the left half to preserve image contrast */}
-        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-white via-white/90 to-transparent w-full md:w-2/3 lg:w-7/12"></div>
+      {/* Ambient Background Glows */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[60%] h-[60%] bg-brand-100/30 rounded-full blur-[120px] mix-blend-multiply flex transition-all duration-1000"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent-50/40 rounded-full blur-[120px] mix-blend-multiply flex transition-all duration-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 w-full">
-        <div className="max-w-3xl">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center md:text-left relative backdrop-blur-sm bg-white/20 p-8 md:p-12 rounded-[2rem] border border-white/40 shadow-2xl shadow-slate-900/5 lg:backdrop-blur-none lg:bg-transparent lg:p-0 lg:border-none lg:shadow-none"
+            className="w-full lg:w-1/2 text-center lg:text-left relative z-20"
           >
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 backdrop-blur-md border border-white/60 rounded-full text-brand-600 text-sm font-semibold mb-8 shadow-sm cursor-default select-none hidden md:inline-flex"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-md border border-white/60 rounded-full text-brand-600 text-sm font-semibold mb-8 shadow-sm cursor-default select-none hidden md:inline-flex"
             >
               <Sparkles className="w-4 h-4 fill-brand-200 text-brand-500" />
               <span>Сервис премиум-класса</span>
@@ -48,11 +43,11 @@ const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
               в Москве
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-700 font-medium mb-10">
-              с гарантией идеальной чистоты и <strong className="text-brand-600 bg-brand-50 px-2 rounded-md">скидкой 1 500 рублей</strong> на первый заказ
+            <p className="text-xl md:text-2xl text-slate-600 font-medium mb-10 max-w-2xl mx-auto lg:mx-0">
+              с гарантией идеальной чистоты и <strong>скидкой 1 500 рублей</strong> на первый заказ
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 mb-12 relative z-20">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-12">
               <motion.button
                 whileHover={{ scale: 1.02, translateY: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -73,28 +68,48 @@ const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
                 </div>
               </motion.button>
 
-              <div className="text-sm font-bold text-slate-800 flex items-center gap-2 bg-white/60 px-4 py-2 rounded-full backdrop-blur-md border border-white/50">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+              <div className="text-sm font-bold text-slate-500 flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse outline outline-4 outline-green-100"></div>
                 Свободны сейчас
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-slate-800 font-bold flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
-              <span className="flex items-center gap-2 bg-white/40 px-3 py-1.5 rounded-lg backdrop-blur-sm">
-                <CheckCircle className="w-5 h-5 text-brand-600" />
+            <p className="text-lg md:text-xl text-slate-600 font-bold flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+              <span className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-brand-500" />
                 Честные цены
               </span>
-              <span className="flex items-center gap-2 bg-white/40 px-3 py-1.5 rounded-lg backdrop-blur-sm">
-                <CheckCircle className="w-5 h-5 text-brand-600" />
+              <span className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-brand-500" />
                 Опыт
               </span>
-              <span className="flex items-center gap-2 bg-white/40 px-3 py-1.5 rounded-lg backdrop-blur-sm">
-                <CheckCircle className="w-5 h-5 text-brand-600" />
+              <span className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-brand-500" />
                 Гарантия
               </span>
             </p>
-
           </motion.div>
+
+          {/* Right Visual - Blurred Background Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="w-full lg:w-1/2 relative h-[350px] sm:h-[450px] lg:h-[600px] flex items-center justify-center -mr-0 lg:-mr-12"
+          >
+            <div className="relative w-full h-full max-w-2xl px-4 lg:px-0">
+              <img
+                src={heroBg}
+                alt="Процесс уборки"
+                className="w-full h-full object-cover object-center lg:object-right lg:scale-110"
+                style={{
+                  maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%)'
+                }}
+              />
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
