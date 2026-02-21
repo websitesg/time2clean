@@ -90,38 +90,34 @@ const Hero: React.FC<HeroProps> = ({ onOrderClick }) => {
               <span>Сервис премиум-класса</span>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-slate-900 leading-[1.05] mb-8 tracking-tight max-w-4xl mx-auto lg:mx-0">
-              Идеальная чистота<br />
-              вашего дома<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-accent-500 to-brand-400 animate-shimmer bg-[length:200%_auto]">за 2 часа</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tight max-w-4xl mx-auto lg:mx-0">
+              Профессиональная<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-accent-500 to-brand-400 animate-shimmer bg-[length:200%_auto]">уборка квартир</span><br />
+              в Москве
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-500 font-medium mb-12 max-w-2xl mx-auto lg:mx-0 flex flex-col md:flex-row gap-2 md:gap-6 justify-center lg:justify-start items-center">
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-brand-500" />
-                Честные цены
-              </span>
-              <span className="hidden md:inline w-1.5 h-1.5 rounded-full bg-slate-300"></span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-brand-500" />
-                Выезд в день заказа
-              </span>
-              <span className="hidden md:inline w-1.5 h-1.5 rounded-full bg-slate-300"></span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-brand-500" />
-                Гарантия качества
-              </span>
+            <p className="text-xl md:text-2xl text-slate-600 font-medium mb-10 max-w-2xl mx-auto lg:mx-0">
+              с гарантией идеальной чистоты и <strong>скидкой 1 500 рублей</strong> на первый заказ
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-20 relative z-20">
               <motion.button
                 whileHover={{ scale: 1.02, translateY: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={onOrderClick}
+                onClick={() => {
+                  // User wants this to scroll to calculator, but since they don't have refs setup,
+                  // and we have `onOrderClick` opening the modal, we can scroll to the calculator.
+                  const calc = document.querySelector('.container.mx-auto.px-4.md\\:px-6')?.closest('section.py-20');
+                  if (calc) {
+                    calc.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    onOrderClick(); // Fallback to modal if calculator not found instantly
+                  }
+                }}
                 className="w-full sm:w-auto px-10 py-5 bg-brand-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-brand-500/20 hover:shadow-brand-500/40 hover:bg-brand-500 transition-all flex items-center justify-center gap-3 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 slant-x-12"></div>
-                Рассчитать стоимость
+                Рассчитать стоимость уборки
                 <div className="bg-white/20 rounded-full p-1 group-hover:translate-x-1 transition-transform">
                   <ArrowRight className="w-4 h-4" />
                 </div>
